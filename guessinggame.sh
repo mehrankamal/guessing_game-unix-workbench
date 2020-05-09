@@ -18,8 +18,6 @@ function main {
   done
 
   echo "Congratulations! you guessed the correct number of files. There are $guess files in the directory."
-  echo "Here's a list:"
-  ls -1A
   echo "Good bye."
 }
 
