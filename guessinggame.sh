@@ -5,13 +5,18 @@ function main {
 
   echo "Please enter the no of files in the directory: "
   read guess
-  while [[ guess -ne files ]]
+  while [[ $guess -ne $files ]]
   do
-    if [[ guess -gt files ]]
+    if [[ $guess =~ ^[0-9]+ ]]
     then
-      echo "Your guess is too high, please try a lower number."
+      if [[ $guess -gt $files ]]
+      then
+        echo "Your guess is too high, please try a lower number."
+      else
+        echo "Your guess is too low, please try a higher number."
+      fi
     else
-      echo "Your guess is too low, please try a higher number."
+      echo "Invalid input. Please enter a valid non-negative integer."
     fi
     echo "Please enter number of files again: "
     read guess
